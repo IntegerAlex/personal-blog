@@ -17,13 +17,13 @@ This is the repository for my personal blog website. It is built using [Vitepres
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/your-blog-website.git
+    git clone https://github.com/IntegerAlex/personal-blog.git
     ```
 
 2. Install the dependencies:
 
     ```bash
-    cd your-blog-website
+    cd personal-blog
     npm install
     ```
 
@@ -39,7 +39,7 @@ This is the repository for my personal blog website. It is built using [Vitepres
     npm run dev
     ```
 
-    Open your browser and visit `http://localhost:3000` to see the website.
+    Open your browser and visit `http://localhost:5000` to see the website.
 
 4. Build the website for production:
 
@@ -49,6 +49,10 @@ This is the repository for my personal blog website. It is built using [Vitepres
 
     The generated static files will be available in the `dist` directory.
 
-## License
+## License and Code Disclosure
 
 This project is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0). See the [LICENSE](LICENSE) file for more details.
+
+If you choose to use the code in this repository, you are required to disclose the source code of your modified version. This means that if you distribute your modified version, you must make the modified source code available to the recipients under the same license terms.
+
+Please note that the code in this repository is provided as-is and does not come with any warranties. You are responsible for reviewing and understanding the code before using it in your own projects.
