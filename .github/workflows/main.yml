@@ -1,33 +1,32 @@
-name: Build and Deploy VuePress
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # Adjust the branch name as needed
+      - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Use Node.js 20.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20.x
-
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Install Dependencies and Build VuePress Site
-        run: |
-          npm install  # Use npm to install dependencies
-          npm run build    # Use npm to build the VuePress site
+      - name: Install Node.js and npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
-      - name: Deploy VuePress Site
-        uses: jenkey2011/vuepress-deploy@master
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}  # Your GitHub Personal Access Token
-          TARGET_REPO: username/repo                 # Your target repository (username/repo)
-          TARGET_BRANCH: gh-pages                    # The branch to deploy the site to
-          BUILD_SCRIPT: npm install && npm run build # Build script for VuePress
-          BUILD_DIR: .vuepress/dist                  # Directory containing the built VuePress site
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build VuePress site
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .vuepress/dist
+          enable_jekyll: false
