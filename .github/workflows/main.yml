@@ -32,5 +32,5 @@ jobs:
           git add .
           git commit -m "Deploy to GitHub Pages"
           git branch -M main
-          git remote add origin https://github.com/username/repo.git
+          git remote add origin https://github.com/IntegerAlex/personal-blog.git
           git push -f origin main:gh-pages
