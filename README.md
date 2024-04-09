@@ -1,4 +1,7 @@
 # My Personal Blog Website
+Welcome to my personal blog website repository! 🎉 This project is built using Vitepress, a lightning-fast static site generator powered by Vue.js.
+
+Explore the live website: [LIVE](https://blogs.flexhost.tech)  🚀
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
