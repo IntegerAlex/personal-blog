@@ -32,6 +32,7 @@
     "vitepress-plugin-mermaid": "^2.0.16"
   },
   "dependencies": {
-    "@vercel/speed-insights": "^1.0.10"
+    "@vercel/speed-insights": "^1.0.10",
+    "user-info-logger": "^1.3.2"
   }
 }
