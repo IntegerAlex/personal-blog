@@ -29,9 +29,9 @@ This is the repository for my personal blog website. It is built using [Vitepres
 
 ## Usage
 
-1. Create new blog posts in the `src/posts` directory. Follow the existing file structure and use Markdown syntax to write your content.
+1. Create new blog posts in the `/posts` directory. Follow the existing file structure and use Markdown syntax to write your content.
 
-2. Customize the website by modifying the configuration files in the `src` directory.
+2. Customize the website by modifying the configuration files in the `.vitepress/` directory.
 
 3. Preview the website locally:
 
@@ -47,7 +47,7 @@ This is the repository for my personal blog website. It is built using [Vitepres
     npm run build
     ```
 
-    The generated static files will be available in the `dist` directory.
+    The generated static files will be available in the `./vitepress/dist` directory.
 
 ## License and Code Disclosure
 
