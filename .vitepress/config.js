@@ -46,11 +46,12 @@ export default defineConfig(
     mermaidPlugin: {
         class: "mermaid my-class", // set additional css classes for parent container 
       },
-    /*
+    
       optimizeDeps: {
-          keepNames: true
+        //   keepNames: true
+        include: ['user-info-logger']
       }
-      */
+      
 
   })
 )
