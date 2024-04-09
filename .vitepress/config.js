@@ -1,10 +1,12 @@
 import { defineConfig } from 'vitepress'
 import { getPosts } from './theme/serverUtils'
+import { withMermaid } from "vitepress-plugin-mermaid";
 
 //每页的文章数量
 const pageSize = 10
 
-export default defineConfig({
+export default defineConfig(
+  withMermaid({
     title: 'Blogs',
     base: '/',
     cacheDir: './node_modules/vitepress_cache',
@@ -40,10 +42,15 @@ export default defineConfig({
     vite: {
         //build: { minify: false }
         server: { port: 5000 }
-    }
+    },
+    mermaidPlugin: {
+        class: "mermaid my-class", // set additional css classes for parent container 
+      },
     /*
       optimizeDeps: {
           keepNames: true
       }
       */
-})
+
+  })
+)
