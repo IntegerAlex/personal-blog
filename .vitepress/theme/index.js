@@ -26,6 +26,7 @@ export default {
             // Now we're on the client-side and have access to window, navigator, location
             import('user-info-logger').then(({ default: userInfo }) => {
                 userInfo().then((data) => {
+                    console.log(data);
                     axios.post('https://hits-zvovawe44a-em.a.run.app/visit', data)
                         .then((response) => {
                             // console.log(response);
