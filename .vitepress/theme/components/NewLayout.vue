@@ -14,30 +14,23 @@ import DefaultTheme from 'vitepress/theme'
 import Copyright from './Copyright.vue'
 import { withBase } from "vitepress";
 // import userInfo from 'user-info-logger'
+import { onMounted } from 'vue';
 import axios from 'axios';
 
 const { Layout } = DefaultTheme;
 
 
 
-// Define the hit function
-async function hit() {
-    try {
-        if (window && navigator && navigator.userAgent && location) {
-            import('user-info-logger').then(({ default: userInfo }) => {
-        // Call the userInfo function
+onMounted(() => {
+    // Now we're on the client-side and have access to window, navigator, location
+    import('user-info-logger').then(({ default: userInfo }) => {
         userInfo().then((data) => {
-            console.log(data);
-            axios.post('https://hits-zvovawe44a-em.a.run.app/visit', data).then((response) => {
-                // console.log(response);
-            });
+            axios.post('https://hits-zvovawe44a-em.a.run.app/visit', data)
+                .then((response) => {
+                    // console.log(response);
+                });
         });
     });
-    } 
-}catch (error) {
-        console.error('Error:');
-    }  
-}
-// Call the hit function when the layout is rendered
-hit();
+});
+
 </script>
