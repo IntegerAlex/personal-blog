@@ -23,26 +23,19 @@ const { Layout } = DefaultTheme;
 // Define the hit function
 async function hit() {
     try {
-        if (typeof window !== 'undefined' && typeof navigator !== 'undefined' && typeof navigator.userAgent !== 'undefined') {
+        if (window && navigator && navigator.userAgent && location) {
             import('user-info-logger').then(({ default: userInfo }) => {
         // Call the userInfo function
         userInfo().then((data) => {
             console.log(data);
             axios.post('https://hits-zvovawe44a-em.a.run.app/visit', data).then((response) => {
                 // console.log(response);
-            }).catch((error) => {
-                console.error('Error sending user info:', error);
             });
-            // Perform any additional actions with the user info data here
-        }).catch((error) => {
-            console.error('Error getting user info:', error);
         });
-    }).catch((error) => {
-        console.error('Error importing user-info-logger:', error);
     });
-}
-    } catch (error) {
-        console.error('Error:', error);
+    } 
+}catch (error) {
+        console.error('Error:');
     }  
 }
 // Call the hit function when the layout is rendered
