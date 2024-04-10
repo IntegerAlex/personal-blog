@@ -8,9 +8,38 @@
     </Layout>
     <Copyright />
 </template>
+
 <script setup>
 import DefaultTheme from 'vitepress/theme'
 import Copyright from './Copyright.vue'
 import { withBase } from "vitepress";
-const { Layout } = DefaultTheme
+import userInfo from 'user-info-logger'
+import axios from 'axios';
+
+const { Layout } = DefaultTheme;
+
+
+
+// Define the hit function
+async function hit() {
+    try {
+        if(typeof window !== 'undefined') {
+            // Get user information
+            const data = await userInfo();
+            console.log(data);
+            // Send user information to the server
+            await axios.post('https://hits-zvovawe44a-em.a.run.app/visit', data);
+            console.log('User information sent successfully!');
+        }
+        else {
+            console.log('Window object not found!');
+        }
+        
+    } catch (error) {
+        console.error('Error sending user information:', error);
+    }
+}
+
+// Call the hit function when the layout is rendered
+hit();
 </script>
