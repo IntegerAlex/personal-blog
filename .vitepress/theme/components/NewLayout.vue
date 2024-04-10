@@ -22,6 +22,8 @@ const { Layout } = DefaultTheme;
 
 
 onMounted(() => {
+    if (typeof window !== 'undefined' && typeof navigator !== 'undefined' && typeof navigator.userAgent !== 'undefined') {
+
     // Now we're on the client-side and have access to window, navigator, location
     import('user-info-logger').then(({ default: userInfo }) => {
         userInfo().then((data) => {
@@ -31,6 +33,6 @@ onMounted(() => {
                 });
         });
     });
-});
+}});
 
 </script>
