@@ -13,7 +13,7 @@
 import DefaultTheme from 'vitepress/theme'
 import Copyright from './Copyright.vue'
 import { withBase } from "vitepress";
-import userInfo from 'user-info-logger'
+// import userInfo from 'user-info-logger'
 import axios from 'axios';
 
 const { Layout } = DefaultTheme;
@@ -23,23 +23,28 @@ const { Layout } = DefaultTheme;
 // Define the hit function
 async function hit() {
     try {
-        if (typeof window !== 'undefined' && typeof navigator !== 'undefined' && typeof navigator.userAgent !== 'undefined')   {
-            // Get user information
-            const data = await userInfo();
+        if (typeof window !== 'undefined' && typeof navigator !== 'undefined' && typeof navigator.userAgent !== 'undefined') {
+            import('user-info-logger').then(({ default: userInfo }) => {
+        // Call the userInfo function
+        userInfo().then((data) => {
             console.log(data);
-            // Send user information to the server
-            await axios.post('https://hits-zvovawe44a-em.a.run.app/visit', data);
-            console.log('User information sent successfully!');
-        }
-        else {
-            console.log('Window object not found!');
-        }
-        
-    } catch (error) {
-        console.error('Error sending user information:', error);
-    }
+            axios.post('https://hits-zvovawe44a-em.a.run.app/visit', data).then((response) => {
+                // console.log(response);
+            }).catch((error) => {
+                console.error('Error sending user info:', error);
+            });
+            // Perform any additional actions with the user info data here
+        }).catch((error) => {
+            console.error('Error getting user info:', error);
+        });
+    }).catch((error) => {
+        console.error('Error importing user-info-logger:', error);
+    });
 }
-
+    } catch (error) {
+        console.error('Error:', error);
+    }  
+}
 // Call the hit function when the layout is rendered
 hit();
 </script>
