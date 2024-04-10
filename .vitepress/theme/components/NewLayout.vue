@@ -23,7 +23,7 @@ const { Layout } = DefaultTheme;
 // Define the hit function
 async function hit() {
     try {
-        if(typeof window !== 'undefined') {
+        if(typeof window !== 'undefined' && navigator !== 'undefined') {
             // Get user information
             const data = await userInfo();
             console.log(data);
