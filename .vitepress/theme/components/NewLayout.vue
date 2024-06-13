@@ -31,7 +31,7 @@ onMounted(() => {
                         .then((data) => {
                             // console.log('user-info-logger data:', data);
         
-                            axios.post('https://hits-zvovawe44a-em.a.run.app/visit', data)
+                            axios.post(' https://hits-v2ndqtpkjq-de.a.run.app/visit', data)
                                 .then((response) => {
                                     console.log('axios.post response:', response);
                                 })
