@@ -7,6 +7,7 @@ Explore the live website: [LIVE](https://blogs.flexhost.tech)  🚀
 
 ![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
 ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+[![DeepSource](https://app.deepsource.com/gh/IntegerAlex/personal-blog.svg/?label=resolved+issues&show_trend=true&token=9QpwCeVuHL0rp5Pp9-lkWG-a)](https://app.deepsource.com/gh/IntegerAlex/personal-blog/)
 
 This is the repository for my personal blog website. It is built using [Vitepress](https://vitepress.vuejs.org/), a fast and lightweight static site generator powered by Vue.js.
 
