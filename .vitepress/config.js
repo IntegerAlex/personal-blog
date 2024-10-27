@@ -12,6 +12,12 @@ export default defineConfig(
     cacheDir: './node_modules/vitepress_cache',
     description: 'vitepress,blog,blog-theme',
     ignoreDeadLinks: true,
+	      head: [
+      [
+        'meta',
+        { name: 'google-adsense-account', content: 'ca-pub-8253899740408429' }
+      ]
+    ],
     themeConfig: {
         posts: await getPosts(pageSize),
         website: 'https://github.com/IntegerAlex/personal-blog', //copyright link
@@ -32,7 +38,7 @@ export default defineConfig(
             provider: 'local',
         },
         //outline:[2,3],
-        outlineTitle: '文章摘要',
+        outlineTitle: 'Table of Contents',
         socialLinks: [{ icon: 'github', link: 'https://github.com/IntegerAlex/' },
                         {icon:'linkedin',link:'https://www.linkedin.com/in/akshat-kotpalliwar-554944258/'},
                     {icon:'npm',link:'https://www.npmjs.com/~nigesh'}]
